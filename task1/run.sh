@@ -35,6 +35,6 @@ done
 
 cd $sdir
 
-2>/dev/null 1>&2 tar -cvf $backup_archive_name $backup_folder
+tar -czf $backup_archive_name $backup_folder
 
 echo done
