@@ -12,13 +12,25 @@ add_custom_command(
 )
 
 set(MAIN_SOURCE ${PROJECT_SOURCE_DIR}/C/main.cpp)
+set(TEST_SOURCE ${PROJECT_SOURCE_DIR}/C/main_test.cpp ${PROJECT_SOURCE_DIR}/C/test.cpp)
 
 add_custom_target( RunGenerator DEPENDS ${PROJECT_SOURCE_DIR}/A/index.h )
 
 add_executable(C  ${MAIN_SOURCE})
 add_dependencies( C RunGenerator )
 
-include_directories(C PRIVATE ${PROJECT_SOURCE_DIR})
+include_directories(C ${PROJECT_SOURCE_DIR})
 
 add_subdirectory(B)
 target_link_libraries(C Lib)
+
+
+include(GoogleTest)
+find_package(GTest)
+
+add_executable(CTest ${TEST_SOURCE})
+add_dependencies(CTest RunGenerator)
+
+include_directories(CTest ${PROJECT_SOURCE_DIR})
+
+target_link_libraries(CTest Lib GTest::gtest GTest::gtest_main)
