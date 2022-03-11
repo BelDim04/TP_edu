@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/C.dir/C/main.cpp.o -o ../bin/C  -Wl,-rpath,/home/dmitriy/Documents/TP_edu/task2/lib ../lib/libLib.so 

@@ -1,7 +1,0 @@
-/home/dmitriy/Documents/TP_edu/task2/build/CMakeFiles/RunGenerator.dir
-/home/dmitriy/Documents/TP_edu/task2/build/CMakeFiles/C.dir
-/home/dmitriy/Documents/TP_edu/task2/build/CMakeFiles/edit_cache.dir
-/home/dmitriy/Documents/TP_edu/task2/build/CMakeFiles/rebuild_cache.dir
-/home/dmitriy/Documents/TP_edu/task2/build/B/CMakeFiles/Lib.dir
-/home/dmitriy/Documents/TP_edu/task2/build/B/CMakeFiles/edit_cache.dir
-/home/dmitriy/Documents/TP_edu/task2/build/B/CMakeFiles/rebuild_cache.dir
