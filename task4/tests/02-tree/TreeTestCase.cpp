@@ -8,6 +8,7 @@
 #include <gtest/gtest.h>
 #include <string>
 #include <filesystem>
+#include <fstream>
 
 TEST(GetTreeTest, ThrowTest){
     path testPath = std::filesystem::current_path()/"testFolder";
