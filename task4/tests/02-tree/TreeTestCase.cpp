@@ -5,10 +5,9 @@
 
 #include "TreeTestCase.h"
 #include "Tree.h"
-/*#include <gtest/gtest.h>
+#include <gtest/gtest.h>
 #include <string>
 #include <filesystem>
-#include <fstream>
 
 TEST(GetTreeTest, ThrowTest){
     path testPath = std::filesystem::current_path()/"testFolder";
@@ -55,5 +54,5 @@ TEST(FilterEmptyNodesTest, TestNoThrow){
     testFile.close();
     ASSERT_NO_THROW(FilterEmptyNodes(GetTree(std::string(testPath), false), testPath));
     remove_all(testPath);
-}*/
+}
 
