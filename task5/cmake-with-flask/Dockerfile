@@ -1,8 +1,8 @@
 FROM gcc:latest
 
-ADD ../cmake-with-flask /opt/techprog/cmake-with-flask
+ADD ./ /opt/techprog/
 
-WORKDIR /opt/techprog/cmake-with-flask
+WORKDIR /opt/techprog/
 
 RUN apt-get update && \
     apt-get install -y \
@@ -17,6 +17,6 @@ RUN apt-get update && \
 
 FROM ubuntu:latest
 
-WORKDIR /opt/techprog/cmake-with-flask/build
+WORKDIR /opt/techprog/build
 
 ENTRYPOINT ["/bin/C"]
