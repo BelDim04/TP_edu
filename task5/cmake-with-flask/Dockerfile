@@ -3,7 +3,8 @@ FROM gcc:latest as build
 RUN apt-get update && \
     apt-get install -y \
       cmake \
-      make
+      make \
+      python
 
 ADD ./ /opt/techprog/
 
@@ -25,6 +26,6 @@ COPY --from=build /opt opt/
 
 WORKDIR /opt/techprog
 
-CMD app.py --port 8898 --host $(cat ../../etc/hostname)
+CMD python ./app.py --port 8898 --host 0.0.0.0
 
 ENTRYPOINT bin/C
