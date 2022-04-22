@@ -3,8 +3,7 @@ FROM gcc:latest as build
 RUN apt-get update && \
     apt-get install -y \
       cmake \
-      make \
-      python
+      make
 
 ADD ./ /opt/techprog/
 
@@ -17,7 +16,9 @@ RUN mkdir build && \
 
 
 
-FROM ubuntu:latest
+FROM python:3.8
+
+RUN pip3 install Flask
 
 RUN useradd tp2022user
 USER tp2022user
@@ -26,6 +27,4 @@ COPY --from=build /opt opt/
 
 WORKDIR /opt/techprog
 
-CMD python ./app.py --port 8898 --host 0.0.0.0
-
-ENTRYPOINT bin/C
+CMD python3 ./app.py --port 8898 --host 0.0.0.0 && bin/C
