@@ -1,22 +1,17 @@
 FROM gcc:latest
 
+RUN apt-get update && \
+    apt-get install -y \
+      cmake \
+      make
+
 ADD ./ /opt/techprog/
 
 WORKDIR /opt/techprog/
 
-RUN apt-get update && \
-    apt-get install -y \
-      cmake \
-      make \
-    && \
-    mkdir build && \
+RUN mkdir build && \
     cd build &&\
     cmake .. && \
     make
 
-
-FROM ubuntu:latest
-
-WORKDIR /opt/techprog/build/bin
-
-ENTRYPOINT ["./C"]
+ENTRYPOINT ["bin/C"]
