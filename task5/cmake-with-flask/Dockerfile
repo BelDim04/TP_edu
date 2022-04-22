@@ -1,10 +1,4 @@
-FROM ubuntu:latest
-
-RUN useradd tp2022user
-USER tp2022user
-
-
-FROM gcc:latest
+FROM gcc:latest as build
 
 RUN apt-get update && \
     apt-get install -y \
@@ -20,4 +14,17 @@ RUN mkdir build && \
     cmake .. && \
     make
 
-ENTRYPOINT ["bin/C"]
+
+
+FROM ubuntu:latest
+
+RUN useradd tp2022user
+USER tp2022user
+
+COPY --from=build /opt opt/
+
+WORKDIR /opt/techprog
+
+CMD app.py --port 8898 --host $(cat ../../etc/hostname)
+
+ENTRYPOINT bin/C
