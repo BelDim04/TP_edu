@@ -1,6 +1,11 @@
 FROM gcc:latest
 
-RUN mkdir build && \
+RUN apt-get update && \
+    apt-get install -y \
+      cmake \
+      make \
+    && \
+    mkdir build && \
     cd build &&\
     cmake .. && \
     make
