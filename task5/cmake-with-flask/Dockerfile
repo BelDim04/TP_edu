@@ -1,3 +1,9 @@
+FROM ubuntu:latest
+
+RUN useradd tp2022user
+USER tp2022user
+
+
 FROM gcc:latest
 
 RUN apt-get update && \
