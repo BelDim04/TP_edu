@@ -17,6 +17,6 @@ RUN apt-get update && \
 
 FROM ubuntu:latest
 
-WORKDIR /opt/techprog/build
+WORKDIR /opt/techprog/build/bin
 
-ENTRYPOINT ["/bin/C"]
+ENTRYPOINT ["./C"]
