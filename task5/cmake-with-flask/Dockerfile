@@ -27,4 +27,4 @@ COPY --from=build /opt opt/
 
 WORKDIR /opt/techprog
 
-CMD python3 ./app.py --port 8898 --host 0.0.0.0 && bin/C
+CMD python3 ./app.py --port 8898 --host 0.0.0.0
