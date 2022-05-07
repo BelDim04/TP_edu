@@ -25,3 +25,9 @@ jobs:
               cd build
               cmake -DGOOGLE_TEST_DIR=googletest-release-1.8.0 ..
               make
+          - name: Test
+            uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+            with:
+             exec-path: bin/CTestExe
+             report-path: report.xml
+             working-directory: ..
