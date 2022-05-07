@@ -35,5 +35,5 @@ jobs:
           - name: UploadArtifacts
             uses: actions/upload-artifact@v3
             with:
-            name: Distributive
-            path: tsk6/task-ci/bin
+              name: Distributive
+              path: tsk6/task-ci/bin
