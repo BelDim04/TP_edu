@@ -23,5 +23,5 @@ jobs:
               cd ..
               mkdir build
               cd build
-              cmake -DGOOGLE_TEST_DIR=release-1.8.0 ..
+              cmake -DGOOGLE_TEST_DIR=googletest-release-1.8.0 ..
               make
