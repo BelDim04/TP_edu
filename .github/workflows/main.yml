@@ -25,7 +25,7 @@ jobs:
               cd build
               cmake -DGOOGLE_TEST_DIR=googletest-release-1.8.0 ..
               make
-              make install
+              sudo make install
           - name: Test
             uses: akhtyamovpavel/ActionGtestReport@v0.0.9
             with:
