@@ -15,7 +15,7 @@ jobs:
           - name: Tests
             uses: actions/checkout@v2
             with:
-              repositoriy: google/googletest
+              repository: google/googletest
               path: task6/task-ci/3rdparty
 
           - name: Build
