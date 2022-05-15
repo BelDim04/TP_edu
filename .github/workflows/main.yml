@@ -24,7 +24,7 @@ jobs:
               cd task-ci
               mkdir build
               cd build
-              cmake -DGOOGLE_TEST_DIR=googletest ..
+              cmake ..
               make
               sudo make install
           - name: Test
