@@ -12,18 +12,19 @@ jobs:
       steps:
           - uses: actions/checkout@v2
 
+          - name: Tests
+            uses: actions/checkout@v2
+            with:
+              repositoriy: google/googletest
+              path: task6/task-ci/3rdparty
+
           - name: Build
             run: |
               cd task6
               cd task-ci
-              mkdir 3rdparty
-              cd 3rdparty
-              wget https://github.com/google/googletest/archive/release-1.8.0.tar.gz
-              tar xf release-1.8.0.tar.gz
-              cd ..
               mkdir build
               cd build
-              cmake -DGOOGLE_TEST_DIR=googletest-release-1.8.0 ..
+              cmake -DGOOGLE_TEST_DIR=googletest ..
               make
               sudo make install
           - name: Test
