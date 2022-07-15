@@ -1,0 +1,42 @@
+name: CI
+on:
+  push:
+    branches: [ task6 ]
+  pull_request:
+    branches: [ task6 ]
+
+
+jobs:
+    Build_with_tests:
+      runs-on: ubuntu-latest
+      steps:
+          - uses: actions/checkout@v2
+
+          - name: Tests
+            uses: actions/checkout@v2
+            with:
+              repository: google/googletest
+              path: task6/task-ci/3rdparty
+
+          - name: Build
+            run: |
+              cd task6
+              cd task-ci
+              mkdir build
+              cd build
+              cmake ..
+              make
+              sudo make install
+          - name: Test
+            uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+            with:
+             exec-path: bin/CTestExe
+             report-path: report.xml
+             working-directory: task6/task-ci
+          - name: UploadArtifacts
+            uses: actions/upload-artifact@v3
+            with:
+              name: Distributive
+              path: | 
+                task6/task-ci/bin
+                task6/task-ci/lib
